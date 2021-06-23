@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:chitchat/utils/constants.dart';
 
@@ -33,9 +34,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                       ),
                     ),
-                    Text(
-                      'Chitchat',
-                      style: TextStyle(fontSize: 72.0, color: Colors.black87),
+                    Container(
+                      child: DefaultTextStyle(
+                        style: const TextStyle(
+                            fontSize: 72.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700),
+                        child: AnimatedTextKit(
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                              'Chitchat',
+                              speed: const Duration(milliseconds: 100),
+                            ),
+                          ],
+                          totalRepeatCount: 1,
+                        ),
+                      ),
                     ),
                   ],
                 ),

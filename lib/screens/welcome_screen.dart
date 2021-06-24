@@ -30,24 +30,27 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       child: Container(
                         child: Image(
                           image: kLogo,
-                          height: 100,
+                          height: 90,
                         ),
                       ),
                     ),
                     Container(
                       child: DefaultTextStyle(
                         style: const TextStyle(
-                            fontSize: 72.0,
+                            fontSize: 60.0,
                             color: Colors.black,
                             fontWeight: FontWeight.w700),
-                        child: AnimatedTextKit(
-                          animatedTexts: [
-                            TypewriterAnimatedText(
-                              'Chitchat',
-                              speed: const Duration(milliseconds: 100),
-                            ),
-                          ],
-                          totalRepeatCount: 1,
+                        child: Padding(
+                          padding: EdgeInsets.all(20.0),
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                'Chitchat',
+                                speed: const Duration(milliseconds: 100),
+                              ),
+                            ],
+                            totalRepeatCount: 1,
+                          ),
                         ),
                       ),
                     ),
@@ -68,7 +71,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         queryData.size.height * 0.06)),
                 child: Text(
                   'Login',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
               ),
               SizedBox(
@@ -88,7 +91,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         queryData.size.height * 0.06)),
                 child: Text(
                   'Register',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
               )
             ],

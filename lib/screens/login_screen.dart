@@ -30,17 +30,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       tag: 'logo',
                       child: Container(
                         child: Padding(
-                          padding: const EdgeInsets.only(bottom: 60),
+                          padding: const EdgeInsets.only(bottom: 20),
                           child: Image(
                             image: kLogo,
+                            height: 85,
                           ),
                         ),
-                        height: 100,
                       ),
                     ),
                     Text(
                       'Login',
-                      style: TextStyle(fontSize: 60.0, color: Colors.black87),
+                      style: TextStyle(fontSize: 55.0, color: Colors.black87),
                     ),
                   ],
                 ),
@@ -95,8 +95,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     minimumSize: Size(queryData.size.width * 0.6,
                         queryData.size.height * 0.06)),
                 child: Text(
-                  'Register',
-                  style: TextStyle(color: Colors.white),
+                  'Login',
+                  style: TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
               )
             ],

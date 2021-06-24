@@ -30,17 +30,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       tag: 'logo',
                       child: Container(
                         child: Padding(
-                          padding: const EdgeInsets.only(bottom: 60),
+                          padding: const EdgeInsets.only(bottom: 20),
                           child: Image(
                             image: kLogo,
+                            height: 85,
                           ),
                         ),
-                        height: 100,
                       ),
                     ),
                     Text(
                       'Register',
-                      style: TextStyle(fontSize: 60.0, color: Colors.black87),
+                      style: TextStyle(fontSize: 55.0, color: Colors.black87),
                     ),
                   ],
                 ),
@@ -96,7 +96,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         queryData.size.height * 0.06)),
                 child: Text(
                   'Register',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
               )
             ],

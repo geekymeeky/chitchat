@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:chitchat/utils/constants.dart';
+import 'package:chitchat/components/pill_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -16,83 +17,62 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Hero(
-                      tag: 'logo',
-                      child: Container(
-                        child: Image(
-                          image: kLogo,
-                          height: 100,
-                        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Hero(
+                    tag: 'logo',
+                    child: Container(
+                      child: Image(
+                        image: kLogo,
+                        height: 100,
                       ),
                     ),
-                    Container(
-                      child: DefaultTextStyle(
-                        style: const TextStyle(
-                            fontSize: 72.0,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700),
-                        child: AnimatedTextKit(
-                          animatedTexts: [
-                            TypewriterAnimatedText(
-                              'Chitchat',
-                              speed: const Duration(milliseconds: 100),
-                            ),
-                          ],
-                          totalRepeatCount: 1,
+                  ),
+                  Container(
+                    child: AnimatedTextKit(
+                      animatedTexts: [
+                        TypewriterAnimatedText(
+                          'Chitchat',
+                          textStyle: TextStyle(
+                              fontSize: 72.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700),
+                          speed: const Duration(milliseconds: 100),
                         ),
-                      ),
+                      ],
+                      totalRepeatCount: 1,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'login_screen');
-                },
-                style: TextButton.styleFrom(
-                    backgroundColor: Colors.deepPurple,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    elevation: 1.0,
-                    minimumSize: Size(queryData.size.width * 0.6,
-                        queryData.size.height * 0.06)),
-                child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              SizedBox(
-                height: 15.0,
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'registration_screen');
-                },
-                style: TextButton.styleFrom(
-                    backgroundColor: Colors.orangeAccent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    elevation: 1.0,
-                    minimumSize: Size(queryData.size.width * 0.6,
-                        queryData.size.height * 0.06)),
-                child: Text(
-                  'Register',
-                  style: TextStyle(color: Colors.white),
-                ),
-              )
-            ],
-          ),
+            ),
+            PillButton(
+              text: 'Login',
+              color: Colors.deepPurple,
+              onPress: () {
+                Navigator.pushNamed(context, 'login_screen');
+              },
+              queryData: queryData,
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            PillButton(
+              text: 'Register',
+              color: Colors.orangeAccent,
+              onPress: () {
+                Navigator.pushNamed(context, 'registration_screen');
+              },
+              queryData: queryData,
+            )
+          ],
         ),
       ),
     );

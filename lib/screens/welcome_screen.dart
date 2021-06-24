@@ -41,7 +41,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         TypewriterAnimatedText(
                           'Chitchat',
                           textStyle: TextStyle(
-                              fontSize: 72.0,
+                              fontSize: 68.0,
                               color: Colors.black,
                               fontWeight: FontWeight.w700),
                           speed: const Duration(milliseconds: 100),

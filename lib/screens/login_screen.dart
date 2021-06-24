@@ -48,13 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 child: TextField(
                   autofocus: false,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                      borderSide: BorderSide(color: Colors.deepPurple),
-                    ),
-                    hintText: 'Username or Email',
-                  ),
+                  decoration: kTextFieldDecor,
                   maxLines: 1,
                   onChanged: (value) {},
                 ),
@@ -67,13 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextField(
                   autofocus: false,
                   obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                      borderSide: BorderSide(color: Colors.deepPurple),
-                    ),
-                    hintText: 'Password',
-                  ),
+                  decoration: kTextFieldDecor,
                   maxLines: 1,
                   onChanged: (value) {},
                 ),

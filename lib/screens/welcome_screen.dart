@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:chitchat/utils/constants.dart';
 import 'package:chitchat/components/pill_button.dart';
@@ -10,6 +11,21 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    firebaseAppInit();
+    super.initState();
+  }
+
+  void firebaseAppInit() async {
+    try {
+      final FirebaseApp defaultApp = await Firebase.initializeApp();
+      print(defaultApp.name);
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData;

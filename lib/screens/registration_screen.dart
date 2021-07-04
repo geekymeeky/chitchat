@@ -1,6 +1,8 @@
 import 'package:chitchat/components/pill_button.dart';
+import 'package:chitchat/screens/chat_screen.dart';
 import 'package:chitchat/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const id = 'registration_screen';
@@ -9,6 +11,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  final _auth = FirebaseAuth.instance;
+  String email;
+  String password;
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData;
@@ -50,7 +55,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 autofocus: false,
                 decoration: kTextFieldDecor.copyWith(hintText: 'Email'),
                 maxLines: 1,
-                onChanged: (value) {},
+                onChanged: (value) {
+                  email = value;
+                },
               ),
               width: queryData.size.width * 0.7,
             ),
@@ -63,7 +70,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 obscureText: true,
                 decoration: kTextFieldDecor.copyWith(hintText: 'Password'),
                 maxLines: 1,
-                onChanged: (value) {},
+                onChanged: (value) {
+                  password = value;
+                },
               ),
               width: queryData.size.width * 0.7,
             ),
@@ -71,8 +80,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 15.0,
             ),
             PillButton(
-              onPress: () {
-                Navigator.pushReplacementNamed(context, 'login_screen');
+              onPress: () async {
+                try {
+                  final newUser = await _auth.createUserWithEmailAndPassword(
+                      email: email, password: password);
+                  if (newUser != null) {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, ChatScreen.id, (route) => false);
+                  }
+                } catch (e) {
+                  print(e);
+                }
               },
               color: Colors.orangeAccent,
               text: 'Register',

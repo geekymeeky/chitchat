@@ -1,3 +1,5 @@
+import 'package:chitchat/screens/chat_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:chitchat/utils/constants.dart';
 
@@ -8,6 +10,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _auth = FirebaseAuth.instance;
+  String email;
+  String password;
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData;
@@ -50,7 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   autofocus: false,
                   decoration: kTextFieldDecor,
                   maxLines: 1,
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    email = value;
+                  },
                 ),
                 width: queryData.size.width * 0.7,
               ),
@@ -63,7 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: true,
                   decoration: kTextFieldDecor,
                   maxLines: 1,
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    password = value;
+                  },
                 ),
                 width: queryData.size.width * 0.7,
               ),
@@ -71,8 +80,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 15.0,
               ),
               TextButton(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, 'login_screen');
+                onPressed: () async {
+                  try {
+                    final currentuser = await _auth.signInWithEmailAndPassword(
+                        email: email, password: password);
+                    if (currentuser != null) {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, ChatScreen.id, (route) => false);
+                    }
+                  } catch (e) {
+                    print(e);
+                  }
                 },
                 style: TextButton.styleFrom(
                     backgroundColor: Colors.deepPurple,

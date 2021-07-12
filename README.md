@@ -19,10 +19,12 @@ To start contributing, follow the below guidelines:
 **2.** Clone your forked copy of the project.
 
 ```
-git clone --depth 1 https://github.com/<your_user_name>/chitchat.git
+git clone https://github.com/<your_user_name>/chitchat.git
+
 ```
 
-<img src="./readme_assets/CloneRepo.png" width="500">
+<img src="https://user-images.githubusercontent.com/75167785/125248931-4f0b7700-e312-11eb-87d0-e502a49e4ca9.png"  width="500">
+
 
 **3.** Navigate to the project directory :file_folder: .
 
@@ -77,12 +79,13 @@ git push -u origin <your_branch_name>
 
 **12.** To create a pull request, click on `compare and pull requests. Please ensure you compare your feature branch to the desired branch of the repo you are supposed to make a PR to.
 
-<img src="./readme_assets/compare_pr.png" width=600>
+<img src="https://user-images.githubusercontent.com/75167785/125250831-4e73e000-e314-11eb-9fa1-6ccef047746a.png" width=600>
 
 **13.** Add appropriate title and description to your pull request explaining your changes and efforts done.
 
 **14.** Click on `Create Pull Request`.
-<img src="./readme_assets/CreatePR.png" width=600>
+
+<img src="https://user-images.githubusercontent.com/75167785/125251244-bd513900-e314-11eb-9b62-b4efaae0cc37.png" width=600>
 
 **15** Voila :exclamation: You have made a PR to the chitchat project :boom: Sit back patiently and relax while the project maintainers review your PR. Please understand at times the time can vary from a few hours to a few days
 

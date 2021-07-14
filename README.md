@@ -1,6 +1,13 @@
-# chitchat
+<p align="center">
+    <a href="https://iread.ga">
+        <img src="https://github.com//images/logo.png" width="20%">
+    </a>
+</p>
 
-A new Flutter application.
+<h1 align="center"> 
+    Chat Every Time
+</h1>
+<div align="center">
 
 ## Getting Started
 

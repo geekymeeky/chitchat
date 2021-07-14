@@ -1,6 +1,6 @@
-# chitchat
-
-A new Flutter application.
+                            # chitchat
+<img src="https://user-images.githubusercontent.com/75167785/125248931-4f0b7700-e312-11eb-87d0-e502a49e4ca9.png"  width="500">
+                       A new Flutter application.
 
 ## Getting Started
 

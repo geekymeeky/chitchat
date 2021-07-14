@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center"> 
-    Chat Every Time
+    Chitchat
 </h1>
 <div align="center">
 

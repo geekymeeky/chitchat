@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
+  Color c = const Color(0xff5143A5);
   String email;
   String password;
   @override
@@ -93,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                 },
                 style: TextButton.styleFrom(
-                    backgroundColor: Colors.deepPurple,
+                    backgroundColor: c,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0),
                     ),

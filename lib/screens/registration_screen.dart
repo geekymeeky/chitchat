@@ -12,6 +12,7 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
+  Color c = const Color(0xffE8CC09);
   String email;
   String password;
   @override
@@ -92,7 +93,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   print(e);
                 }
               },
-              color: Colors.orangeAccent,
+              color: c,
               text: 'Register',
               queryData: queryData,
             )

@@ -29,6 +29,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData;
+    Color yellow = const Color(0xffE8CC09);
+    Color purple = const Color(0xff5143A5);
     queryData = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(),
@@ -71,7 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             PillButton(
               text: 'Login',
-              color: Colors.deepPurple,
+              color: purple,
               onPress: () {
                 Navigator.pushNamed(context, 'login_screen');
               },
@@ -82,7 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             PillButton(
               text: 'Register',
-              color: Colors.orangeAccent,
+              color: yellow,
               onPress: () {
                 Navigator.pushNamed(context, 'registration_screen');
               },

@@ -2,9 +2,15 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/70858557/125760884-eeaa2854-cc72-4bbe-a617-dabca0c57b65.png" width="160px" height="140px">
   <br>
-  Chitchat is a flutter application used as a communication tool that allows people interact and connect among themselves. It has a visually appealing user interface. If you are a new user, you need to register once for creating your account. After which, you can easily login and chat with your friends.
-</p>
-
+  Chitchat is a flutter application used as a communication tool that allows people interact and connect among themselves. It has a visually appealing user interface. If you are a new user, you need to register once for creating your account. After which, you can easily login and chat with your friends.</p>
+  
+<p align="center">
+	<i><b>You can check the theme here</b></i><br><br>
+	<a href="https://www.figma.com/file/buWE32jllnwsRrIZTwa2Qw/Chitchat?node-id=0%3A1">
+	    <img src="https://forthebadge.com/images/badges/check-it-out.svg">
+	</a>
+	
+	
 <h2 align="center">
 
 ![Issues](https://img.shields.io/github/issues/geekymeeky/chitchat) ![Pull Requests](https://img.shields.io/github/issues-pr/geekymeeky/chitchat) ![Forks](https://img.shields.io/github/forks/geekymeeky/chitchat) ![Stars](https://img.shields.io/github/stars/geekymeeky/chitchat)

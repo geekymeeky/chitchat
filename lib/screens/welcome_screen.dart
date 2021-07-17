@@ -71,7 +71,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             PillButton(
               text: 'Login',
-              color: Colors.deepPurple,
+              color: kLoginButtonColor,
               onPress: () {
                 Navigator.pushNamed(context, 'login_screen');
               },
@@ -82,7 +82,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             PillButton(
               text: 'Register',
-              color: Colors.orangeAccent,
+              color: kRegisterButtonColor,
               onPress: () {
                 Navigator.pushNamed(context, 'registration_screen');
               },

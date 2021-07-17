@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                 },
                 style: TextButton.styleFrom(
-                    backgroundColor: Colors.deepPurple,
+                    backgroundColor: kLoginButtonColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0),
                     ),

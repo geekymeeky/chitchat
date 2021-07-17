@@ -92,7 +92,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   print(e);
                 }
               },
-              color: Colors.orangeAccent,
+              color: kRegisterButtonColor,
               text: 'Register',
               queryData: queryData,
             )

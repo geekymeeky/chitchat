@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextField(
                   autofocus: false,
                   obscureText: true,
-                  decoration: kTextFieldDecor,
+                  decoration: kTextFieldDecor.copyWith(hintText: 'Password'),
                   maxLines: 1,
                   onChanged: (value) {
                     password = value;
@@ -101,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     minimumSize: Size(queryData.size.width * 0.6,
                         queryData.size.height * 0.06)),
                 child: Text(
-                  'Register',
+                  'Login',
                   style: TextStyle(color: Colors.white),
                 ),
               )

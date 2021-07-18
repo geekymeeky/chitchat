@@ -1,4 +1,3 @@
-import 'package:chitchat/components/pill_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:chitchat/utils/constants.dart';
@@ -38,50 +37,64 @@ class _ChatScreenState extends State<ChatScreen> {
         appBar: AppBar(
           backgroundColor: ChatScreenAppBar,
         ),
-        body: SafeArea(
-            child: Column(
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Row(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(color: ChatButtonBorder, width: 2),
-                            borderRadius: BorderRadius.circular(50.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(5.0, 0.0, 10.0, 5.0),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Container(
+                            child: TextField(
+                              autofocus: false,
+                              style: new TextStyle(
+                                  fontSize: 23.0, color: Color(0xFFbdc6cf)),
+                              decoration: new InputDecoration(
+                                filled: true,
+                                fillColor: Colors.white,
+                                hintText: 'Type here...',
+                                contentPadding: const EdgeInsets.only(
+                                    left: 14.0, bottom: 15.0, top: 15.0),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      new BorderSide(color: Colors.white),
+                                  borderRadius: new BorderRadius.circular(25.7),
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      new BorderSide(color: Colors.white),
+                                  borderRadius: new BorderRadius.circular(25.7),
+                                ),
+                              ),
+                              maxLines: 1,
+                              onChanged: (value) {},
+                            ),
+                            width: queryData.size.width * 0.75,
                           ),
-                          elevation: 1.0,
-                          minimumSize: Size(queryData.size.width * 0.7,
-                              queryData.size.height * 0.06),
-                        ),
-                        child: Text(
-                          "",
-                          style: TextStyle(color: Colors.black),
                         ),
                       ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(CircleBorder()),
-                        padding: MaterialStateProperty.all(EdgeInsets.all(30)),
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(CircleBorder()),
+                            padding:
+                                MaterialStateProperty.all(EdgeInsets.all(30)),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.blue),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                ]))
+                    ]))
           ],
-        )));
+        ));
   }
 }

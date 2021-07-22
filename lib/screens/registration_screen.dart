@@ -88,6 +88,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     Navigator.pushNamedAndRemoveUntil(
                         context, ChatScreen.id, (route) => false);
                   }
+                } on FirebaseAuthException catch (e) {
+                  if (e.code == 'email-already-in-use') {
+                    return showDialog(
+                      context: context,
+                      builder: (e) => AlertDialog(
+                        title: Text("Alert !"),
+                        content: Text("${email} is already in use"),
+                        actions: <Widget>[
+                          ElevatedButton(
+                            onPressed: () {
+                              /* To make the box disappear after clicking OK */
+                              Navigator.of(e).pop();
+                            },
+                            child: Text("OK"),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
                 } catch (e) {
                   print(e);
                 }

@@ -1,47 +1,75 @@
-<h1 align="center">Chitchat 💬</h1>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/70858557/125760884-eeaa2854-cc72-4bbe-a617-dabca0c57b65.png" width="160px" height="140px">
-  <br>
-  Chitchat is a flutter application used as a communication tool that allows people interact and connect among themselves. It has a visually appealing user interface. If you are a new user, you need to register once for creating your account. After which, you can easily login and chat with your friends.</p>
-  
-<p align="center">
-	<i><b>You can check the theme here</b></i><br><br>
-	<a href="https://www.figma.com/file/buWE32jllnwsRrIZTwa2Qw/Chitchat?node-id=0%3A1">
-	    <img src="https://forthebadge.com/images/badges/check-it-out.svg">
-	</a>
-	
-	
-<h2 align="center">
+# Contributing Guidelines
 
-![Issues](https://img.shields.io/github/issues/geekymeeky/chitchat) ![Pull Requests](https://img.shields.io/github/issues-pr/geekymeeky/chitchat) ![Forks](https://img.shields.io/github/forks/geekymeeky/chitchat) ![Stars](https://img.shields.io/github/stars/geekymeeky/chitchat)
+This documentation contains a set of guidelines to help you during the contribution process. 
+We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project. Thank you for helping out and remember,
+**no contribution is too small.**
+
+# Submitting Contributions👩‍💻👨‍💻
+Below you will find the process and workflow used to review and merge your changes.
+## Step 1 : Find an issue
+- Take a look at the Existing Issues or create your **own** Issues!
+- Wait for the Issue to be assigned to you after which you can start working on it.
+- Note : Every change in this project should/must have an associated issue. 
+
+## Step 2 : Fork the Project
+- Fork this Repository. This will create a Local Copy of this Repository on your Github Profile. Keep a reference to the original project in `upstream` remote.
+```
+$ git clone https://github.com/<your-username>/chitchat
+$ cd chitchat
+$ git remote add upstream https://github.com/geekymeeky/chitchat
+```
+
+- If you have already forked the project, update your copy before working.
+```
+$ git remote update
+$ git checkout <branch-name>
+$ git rebase upstream/<branch-name>
+```
+## Step 3 : Branch
+Create a new branch. Use its name to identify the issue your addressing.
+```
+# It will create a new branch with name Branch_Name and switch to that branch 
+$ git checkout -b branch_name
+```
+## Step 4 : Work on the issue assigned
+- Work on the issue(s) assigned to you. 
+- Add all the files/folders needed.
+- After you've made changes or made your contribution to the project add changes to the branch you've just created by:
+```
+# To add all new files to branch Branch_Name
+$ git add .
+```
+## Step 5 : Commit
+- To commit give a descriptive message for the convenience of reveiwer by:
+```
+# This message get associated with all files you have changed
+$ git commit -m 'message
+```
+- **NOTE**: A PR should have only one commit. Multiple commits should be squashed.
+## Step 6 : Work Remotely
+- Now you are ready to your work to the remote repository.
+- When your work is ready and complies with the project conventions, upload your changes to your fork:
+
+```
+# To push your work to your remote repository
+$ git push -u origin Branch_Name
+```
+
+## Step 7 : Pull Request
+- Go to your repository in browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution.
+
+- Voila! Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳
+
+## Need more help?🤔
+You can refer to the following articles on basics of Git and Github and also contact the Project Mentors, in case you are stuck:
+- [Forking a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+- [Cloning a Repo](https://help.github.com/en/desktop/contributing-to-projects/creating-an-issue-or-pull-request)
+- [How to create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
+- [Getting started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
+- [Learn GitHub from Scratch](https://lab.github.com/githubtraining/introduction-to-github)
 
 
-<h2 align="center">Application Preview 🔎</h2>
-<p align="center">
-<img src="https://user-images.githubusercontent.com/70858557/125765247-21e79936-7138-428d-b7b8-a10c722240b3.PNG" height="363px" width="181px"> <img src="https://user-images.githubusercontent.com/70858557/125765252-6307dc31-dd11-4209-b519-75e4dccbe028.PNG" height="363px" width="181px"> <img src="https://user-images.githubusercontent.com/70858557/125765255-66b0bda1-ab03-48b7-a8fe-fb6b61d698cc.PNG" height="363px" width="181px">
-</p>
-<br>
+## Tip from us😇
+It always takes time to understand and learn. So, do not worry at all. We know **you have got this**!💪
 
-<h2 align=center> Tech Stack 🔥 </h2>  
-  <p align="center">
-  <img src="https://img.shields.io/badge/dart-%230175C2.svg?&style=for-the-badge&logo=dart&logoColor=white"/> <img src="https://img.shields.io/badge/Flutter%20-%2302569B.svg?&style=for-the-badge&logo=Flutter&logoColor=white" /> <img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
-  </p>
-<br>
-
-### Open Source Program it has been part of ✨
-<p align="center">
-<img src="https://user-images.githubusercontent.com/70858557/125765880-09f3e81f-7f09-4369-842a-6e1ff3619a16.gif">
-</p>
-
-Contributions of any kind welcome! ✔
-
-<br>
-
-
-<h2 align="center"> Project Admin 👨🏻‍💻 : </h2>
-<p align="center">
-<a href="https://github.com/geekymeeky">
-  <img src="https://avatars.githubusercontent.com/u/66238394?v=4" width="200px" height="200px" />
-  <br>Srijan Kumar Gupta
-</a>
-
+    

@@ -106,6 +106,22 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         ],
                       ),
                     );
+                  } else if (e.code == 'weak-password') {
+                    return showDialog(
+                      context: context,
+                      builder: (e) => AlertDialog(
+                        title: Text("Alert !"),
+                        content: Text("Your password is too weak"),
+                        actions: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(e).pop();
+                            },
+                            child: Text("Ok"),
+                          ),
+                        ],
+                      ),
+                    );
                   }
                 } catch (e) {
                   print(e);

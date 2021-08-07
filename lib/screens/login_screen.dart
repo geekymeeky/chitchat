@@ -55,7 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Container(
                   child: TextFormField(
-                    validator: (input) => input.isValidEmail() ? null : "Check your email",
+                    validator: validateEmail,
+                    //validator: (input) => input.isValidEmail() ? null : "Enter a valid e-mail ID",
                     autofocus: false,
                     decoration: kTextFieldDecor,
                     maxLines: 1,
@@ -65,9 +66,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   width: queryData.size.width * 0.7,
                 ),
-                SizedBox(
-                  height: 15.0,
-                ),
+                //SizedBox(
+                  //height: 15.0,
+                //),
+                Padding(padding: const EdgeInsets.all(15)),
+
                 Container(
                   child: TextFormField(
                     autofocus: false,
@@ -85,16 +88,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextButton(
                   onPressed: () async {
-                    try {
-                      final currentuser = await _auth.signInWithEmailAndPassword(
-                          email: email, password: password);
-                      if (currentuser != null) {
-                        Navigator.pushNamedAndRemoveUntil(
-                            context, ChatScreen.id, (route) => false);
-                      }
-                    } catch (e) {
-                      print(e);
-                    }
+    if(_key.currentState.validate()) {
+        try {
+          final currentuser = await _auth.signInWithEmailAndPassword(
+              email: email, password: password);
+          if (currentuser != null) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, ChatScreen.id, (route) => false);
+          }
+        } catch (e) {
+          print(e);
+        }
+    }
                   },
                   style: TextButton.styleFrom(
                       backgroundColor: kLoginButtonColor,
@@ -117,10 +122,20 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-extension EmailValidator on String {
-  bool isValidEmail() {
-    return RegExp(
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-        .hasMatch(this);
-  }
+//extension EmailValidator on String {
+  //bool isValidEmail() {
+    //return RegExp(
+        //r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        //.hasMatch(this);
+  //}
+//}
+String validateEmail(String formEmail) {
+  if (formEmail == null || formEmail.isEmpty)
+    return 'Email address is required';
+
+  String pattern= r'\w+@\w+\.\w+';
+  RegExp regex = RegExp(pattern);
+  if(!regex.hasMatch(formEmail)) return 'Enter a valid E-mail';
+
+  return null;
 }

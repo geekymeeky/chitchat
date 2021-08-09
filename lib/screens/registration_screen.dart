@@ -51,7 +51,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             Container(
-              child: TextField(
+              child: TextFormField(
                 autofocus: false,
                 decoration: kTextFieldDecor.copyWith(hintText: 'Email'),
                 maxLines: 1,
@@ -81,7 +81,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
             PillButton(
               onPress: () async {
-                try {
+        try {
                   final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email, password: password);
                   if (newUser != null) {
@@ -126,7 +126,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 } catch (e) {
                   print(e);
                 }
-              },
+
+  },
               color: kRegisterButtonColor,
               text: 'Register',
               queryData: queryData,
@@ -137,3 +138,4 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 }
+

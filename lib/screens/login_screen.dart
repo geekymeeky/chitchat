@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
+  final GlobalKey<FormState> _key= GlobalKey<FormState>();
   String email;
   String password;
   @override
@@ -19,96 +20,122 @@ class _LoginScreenState extends State<LoginScreen> {
     queryData = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: [
-                    Hero(
-                      tag: 'logo',
-                      child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 60),
-                          child: Image(
-                            image: kLogo,
+      body: Form(
+        key: _key,
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Hero(
+                        tag: 'logo',
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 60),
+                            child: Image(
+                              image: kLogo,
+                            ),
                           ),
+                          height: 100,
                         ),
-                        height: 100,
                       ),
-                    ),
-                    Text(
-                      'Login',
-                      style: TextStyle(fontSize: 60.0, color: Colors.black87),
-                    ),
-                  ],
+                      Text(
+                        'Login',
+                        style: TextStyle(fontSize: 60.0, color: Colors.black87),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                child: TextField(
-                  autofocus: false,
-                  decoration: kTextFieldDecor,
-                  maxLines: 1,
-                  onChanged: (value) {
-                    email = value;
+                Container(
+                  child: TextFormField(
+                    validator: validateEmail,
+                    //validator: (input) => input.isValidEmail() ? null : "Enter a valid e-mail ID",
+                    autofocus: false,
+                    decoration: kTextFieldDecor,
+                    maxLines: 1,
+                    onChanged: (value) {
+                      email = value;
+                    },
+                  ),
+                  width: queryData.size.width * 0.7,
+                ),
+                //SizedBox(
+                  //height: 15.0,
+                //),
+                Padding(padding: const EdgeInsets.all(15)),
+
+                Container(
+                  child: TextFormField(
+                    autofocus: false,
+                    obscureText: true,
+                    decoration: kTextFieldDecor.copyWith(hintText: 'Password'),
+                    maxLines: 1,
+                    onChanged: (value) {
+                      password = value;
+                    },
+                  ),
+                  width: queryData.size.width * 0.7,
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                TextButton(
+                  onPressed: () async {
+    if(_key.currentState.validate()) {
+        try {
+          final currentuser = await _auth.signInWithEmailAndPassword(
+              email: email, password: password);
+          if (currentuser != null) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, ChatScreen.id, (route) => false);
+          }
+        } catch (e) {
+          print(e);
+        }
+    }
                   },
-                ),
-                width: queryData.size.width * 0.7,
-              ),
-              SizedBox(
-                height: 15.0,
-              ),
-              Container(
-                child: TextField(
-                  autofocus: false,
-                  obscureText: true,
-                  decoration: kTextFieldDecor.copyWith(hintText: 'Password'),
-                  maxLines: 1,
-                  onChanged: (value) {
-                    password = value;
-                  },
-                ),
-                width: queryData.size.width * 0.7,
-              ),
-              SizedBox(
-                height: 15.0,
-              ),
-              TextButton(
-                onPressed: () async {
-                  try {
-                    final currentuser = await _auth.signInWithEmailAndPassword(
-                        email: email, password: password);
-                    if (currentuser != null) {
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, ChatScreen.id, (route) => false);
-                    }
-                  } catch (e) {
-                    print(e);
-                  }
-                },
-                style: TextButton.styleFrom(
-                    backgroundColor: kLoginButtonColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    elevation: 1.0,
-                    minimumSize: Size(queryData.size.width * 0.6,
-                        queryData.size.height * 0.06)),
-                child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white),
-                ),
-              )
-            ],
+                  style: TextButton.styleFrom(
+                      backgroundColor: kLoginButtonColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      elevation: 1.0,
+                      minimumSize: Size(queryData.size.width * 0.6,
+                          queryData.size.height * 0.06)),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+}
+//extension EmailValidator on String {
+  //bool isValidEmail() {
+    //return RegExp(
+        //r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        //.hasMatch(this);
+  //}
+//}
+String validateEmail(String formEmail) {
+  if (formEmail == null || formEmail.isEmpty)
+    return 'Email address is required';
+
+  String pattern= r'\w+@\w+\.\w+';
+  RegExp regex = RegExp(pattern);
+  if(!regex.hasMatch(formEmail)) return 'Enter a valid E-mail';
+
+  return null;
 }

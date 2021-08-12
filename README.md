@@ -9,12 +9,25 @@
 	<a href="https://www.figma.com/file/buWE32jllnwsRrIZTwa2Qw/Chitchat?node-id=0%3A1">
 	    <img src="https://forthebadge.com/images/badges/check-it-out.svg">
 	</a>
-	
-	
 <h2 align="center">
 
-![Issues](https://img.shields.io/github/issues/geekymeeky/chitchat) ![Pull Requests](https://img.shields.io/github/issues-pr/geekymeeky/chitchat) ![Forks](https://img.shields.io/github/forks/geekymeeky/chitchat) ![Stars](https://img.shields.io/github/stars/geekymeeky/chitchat)
+<div align="center">
 
+<a href="https://github.com/geekymeeky/chitchat"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://github.com/geekymeeky/chitchat"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
+<a href="https://github.com/geekymeeky/chitchat"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
+<a href="https://github.com/geekymeeky/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
+<a href="https://github.com/geekymeeky/chitchat/watchers"><img src="https://img.shields.io/github/watchers/geekymeeky/chitchat"></a>
+
+<a href="https://github.com/geekymeeky/chitchat/graphs/contributors"><img src="https://img.shields.io/github/contributors/geekymeeky/chitchat?color=brightgreen"></a>
+<a href="https://github.com/geekymeeky/chitchat/stargazers"><img src="https://img.shields.io/github/stars/geekymeeky/chitchat?color=0059b3"></a>
+<a href="https://github.com/geekymeeky/chitchat/network/members"><img src="https://img.shields.io/github/forks/geekymeeky/chitchat?color=yellow"></a>
+<a href="https://github.com/geekymeeky/chitchat/issues"><img src="https://img.shields.io/github/issues/geekymeeky/chitchat?color=0059b3"></a>
+<a href="https://github.com/geekymeeky/chitchat/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/geekymeeky/chitchat?color=yellow"></a>
+<a href="https://github.com/geekymeeky/chitchat/pulls"><img src="https://img.shields.io/github/issues-pr/geekymeeky/chitchat?color=brightgreen"></a>
+<a href="https://github.com/geekymeeky/chitchat/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/geekymeeky/chitchat?color=0059b3"></a> 
+</div>	
+	
 
 <h2 align="center">Application Preview 🔎</h2>
 <p align="center">
